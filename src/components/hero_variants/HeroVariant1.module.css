@@ -1,0 +1,163 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.bgWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 10s ease-out, opacity 1s ease;
+    opacity: 0;
+}
+
+.bgImage.loaded {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 12vw;
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0;
+    letter-spacing: -0.05em;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.title .line {
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.title.visible .line:nth-child(1) {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title.visible .line:nth-child(2) {
+    transition-delay: 0.35s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title.visible .line:nth-child(3) {
+    transition-delay: 0.5s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
+}
+
+.subtitle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 1s ease 1.2s;
+}
+
+.scrollIndicator.visible {
+    opacity: 0.7;
+}
+
+.scrollIndicator span {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.scrollIndicator .line {
+    width: 1px;
+    height: 60px;
+    background: #fff;
+    animation: scrollLine 2s infinite;
+    transform-origin: top;
+}
+
+@keyframes scrollLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 18vw;
+    }
+}

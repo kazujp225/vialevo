@@ -1,0 +1,14 @@
+:root {
+  --color-primary: #003366; /* Deep Blue */
+  --color-accent: #FF9900; /* Safety Orange */
+  --color-text: #333333;
+  --color-bg: #F5F5F5;
+  --color-white: #FFFFFF;
+  
+  --font-main: 'Noto Sans JP', sans-serif;
+  
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+}

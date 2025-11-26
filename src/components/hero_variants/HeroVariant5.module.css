@@ -1,0 +1,125 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    overflow: hidden;
+    line-height: 0.85;
+}
+
+.text {
+    font-size: 25vw;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    animation: slideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    transform: translateY(100%);
+}
+
+.row:nth-child(1) .text {
+    animation-delay: 0.1s;
+}
+
+.row:nth-child(2) .text {
+    animation-delay: 0.2s;
+}
+
+.row:nth-child(3) .text {
+    animation-delay: 0.3s;
+}
+
+.outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    position: relative;
+}
+
+.outline::before {
+    content: 'LE';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #fff;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    animation: fillText 2s cubic-bezier(0.215, 0.61, 0.355, 1) 1s forwards infinite alternate;
+    -webkit-text-stroke: 0;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fillText {
+    0% {
+        width: 0%;
+    }
+
+    40% {
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: grayscale(100%) contrast(1.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, #000 100%);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 30vw;
+    }
+}

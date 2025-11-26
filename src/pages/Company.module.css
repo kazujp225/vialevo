@@ -1,0 +1,83 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+}
+
+.bgGray {
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+}
+
+/* Philosophy */
+.philosophy {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.philosophyText {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.philosophyDesc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Company Table */
+.companyTable {
+    border-top: 1px solid #ddd;
+}
+
+.row {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.row dt {
+    width: 200px;
+    background-color: #f9f9f9;
+    padding: var(--spacing-md);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.row dd {
+    flex: 1;
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .philosophyText {
+        font-size: 1.8rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .row dt {
+        width: 100%;
+        background-color: #eee;
+    }
+}

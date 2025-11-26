@@ -1,0 +1,239 @@
+.wrapper {
+    width: 100%;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+}
+
+.bgGray {
+    background-color: var(--color-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sectionSubtitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+/* Column Styles */
+.columnGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.columnCard {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.columnCard:hover {
+    transform: translateY(-5px);
+}
+
+.columnImage {
+    height: 200px;
+    background-color: #ddd;
+    /* Placeholder color */
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee),
+        linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.columnContent {
+    padding: var(--spacing-md);
+}
+
+.category {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+}
+
+.date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-left: 8px;
+}
+
+.columnTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* News Styles */
+.newsList {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.newsItem {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.newsLink {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color 0.2s;
+}
+
+.newsLink:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.newsDate {
+    font-family: monospace;
+    color: var(--color-primary);
+    margin-right: var(--spacing-md);
+    flex-shrink: 0;
+}
+
+.newsTitle {
+    font-weight: 500;
+}
+
+/* Blog Styles */
+.blogWrapper {
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.blogCard {
+    display: flex;
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.3s ease;
+}
+
+.blogCard:hover {
+    transform: translateY(-5px);
+}
+
+.blogImageWrapper {
+    flex: 0 0 40%;
+    min-height: 250px;
+}
+
+.blogImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blogContent {
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blogMeta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: var(--spacing-sm);
+}
+
+.blogTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.blogExcerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    color: #555;
+}
+
+.readMore {
+    color: var(--color-primary);
+    font-weight: 700;
+    align-self: flex-start;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Button Wrapper */
+.btnWrapper {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid var(--color-text);
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--color-text);
+    color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .newsLink {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .newsDate {
+        margin-bottom: 4px;
+    }
+
+    .blogCard {
+        flex-direction: column;
+    }
+
+    .blogImageWrapper {
+        height: 200px;
+    }
+}

@@ -1,0 +1,123 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.sectionSubtitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.card {
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.imageWrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.enTitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.linkList {
+    list-style: none;
+    padding: var(--spacing-md);
+}
+
+.link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    transition: color 0.2s, padding-left 0.2s;
+    position: relative;
+}
+
+.link:last-child {
+    border-bottom: none;
+}
+
+.link::after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.link:hover {
+    color: var(--color-primary);
+    padding-left: 8px;
+}
