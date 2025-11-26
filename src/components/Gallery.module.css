@@ -140,33 +140,65 @@
 
 @media (max-width: 900px) {
     .container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: row;
+        /* Keep row direction for carousel */
+        height: 500px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        /* Space for scrollbar if visible */
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+    }
+
+    /* Hide scrollbar for cleaner look */
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .panel {
-        height: 120px;
-        /* Collapsed height */
-        flex: none;
-        width: 100%;
+        flex: 0 0 85vw;
+        /* Each panel takes 85% of viewport width */
+        height: 100%;
+        scroll-snap-align: center;
+        filter: grayscale(0%) brightness(1);
+        /* Always bright on mobile */
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
     }
 
-    .panel.active {
-        height: 400px;
-        /* Expanded height */
-        flex: none;
-    }
+    /* Optional: Scale up the centered item if we could detect it, 
+       but for pure CSS, just keeping them all visible is better UX than the accordion */
 
     .verticalTitleWrapper {
-        top: 50%;
-        left: 20px;
-        bottom: auto;
-        transform: translateY(-50%);
+        display: none;
+        /* Hide vertical title on mobile */
+    }
+
+    .overlay {
+        opacity: 1;
+        /* Always show content */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .cardTitle {
+        transform: translateY(0);
+        font-size: 2rem;
+    }
+
+    .cardText {
+        transform: translateY(0);
+        font-size: 1rem;
+        display: block;
+        /* Ensure text is visible */
     }
 
     .verticalTitle {
         writing-mode: horizontal-tb;
-        letter-spacing: 0.2em;
-        font-size: 1.5rem;
     }
 }
