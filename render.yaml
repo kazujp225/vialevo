@@ -1,12 +1,13 @@
 services:
   - type: web
-    name: vialevo
     runtime: static
+    name: vialevo
     buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    envVars:
-      - key: NODE_VERSION
-        value: 20
+    staticPublishPath: dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000
     routes:
       - type: rewrite
         source: /*
