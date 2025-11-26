@@ -1,46 +1,69 @@
 .section {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--color-bg);
-    text-align: center;
+    padding: 100px 0;
+    background-color: #111;
+    color: #fff;
+    overflow: hidden;
 }
 
 .header {
-    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .title {
     font-size: 3rem;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+    color: #fff;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: 800;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: var(--color-text);
-    opacity: 0.8;
+    color: #aaa;
+    letter-spacing: 0.05em;
+    font-weight: 500;
 }
 
-.imageContainer {
-    position: relative;
+.container {
+    display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
+    height: 600px;
     margin: 0 auto;
+    padding: 0 20px;
+    gap: 10px;
+}
+
+.panel {
+    position: relative;
+    flex: 1;
+    border-radius: 20px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+    filter: grayscale(100%) brightness(0.7);
+}
+
+.panel.active {
+    flex: 3;
+    /* Expands to take more space */
+    filter: grayscale(0%) brightness(1);
 }
 
 .image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.7s ease;
 }
 
-.imageContainer:hover .image {
-    transform: scale(1.03);
+.panel.active .image {
+    transform: scale(1.05);
 }
 
 .overlay {
@@ -48,32 +71,102 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: var(--spacing-lg);
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: var(--color-white);
-    text-align: left;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+    /* Hidden by default */
+    transition: opacity 0.5s ease 0.2s;
+    /* Delay fade in */
 }
 
-.imageContainer:hover .overlay {
+.panel.active .overlay {
     opacity: 1;
+}
+
+.verticalTitleWrapper {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.panel.active .verticalTitleWrapper {
+    opacity: 0;
+    /* Hide vertical title when active */
+}
+
+.verticalTitle {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.cardTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #F4D03F;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.2s;
+}
+
+.panel.active .cardTitle {
     transform: translateY(0);
 }
 
-.overlayText {
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.cardText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+    max-width: 500px;
+    transform: translateY(20px);
+    transition: transform 0.5s ease 0.3s;
 }
 
-@media (max-width: 768px) {
-    .title {
-        font-size: 2rem;
+.panel.active .cardText {
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
     }
 
-    .overlayText {
-        font-size: 1.2rem;
+    .panel {
+        height: 100px;
+        /* Collapsed height */
+        flex: none;
+        width: 100%;
+    }
+
+    .panel.active {
+        height: 400px;
+        /* Expanded height */
+        flex: none;
+    }
+
+    .verticalTitleWrapper {
+        top: 50%;
+        left: 20px;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    .verticalTitle {
+        writing-mode: horizontal-tb;
+        letter-spacing: 0.2em;
+        font-size: 1.5rem;
     }
 }
