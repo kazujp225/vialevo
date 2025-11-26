@@ -53,7 +53,8 @@ const Hero = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                boxShadow: '0 0 50px rgba(0,0,0,0.5)' // Subtle separation
+                boxShadow: '0 0 50px rgba(0,0,0,0.5)', // Subtle separation
+                marginTop: '60px' // Move image down as requested
             }}>
                 <picture style={{
                     display: 'block',
