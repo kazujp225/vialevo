@@ -9,6 +9,7 @@ const Entry = () => {
                 title="エントリー"
                 subtitle="ENTRY"
                 breadcrumb={[{ label: 'エントリー' }]}
+                bgImage="/assets/hero_concept_cinematic_1764071376419.png"
             />
 
             <section className={styles.section}>

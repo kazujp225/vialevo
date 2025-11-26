@@ -145,7 +145,7 @@
     }
 
     .panel {
-        height: 100px;
+        height: 120px;
         /* Collapsed height */
         flex: none;
         width: 100%;

@@ -2,18 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e) => {
-        setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
     return (
         <div
-            onMouseMove={handleMouseMove}
             style={{
                 width: '100%',
-                height: '100vh',
+                height: 'auto', // Let image dictate height
+                minHeight: '100dvh', // Ensure it covers screen if image is short (though likely image is tall enough)
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -24,46 +18,30 @@ const Hero = () => {
                 fontFamily: '"Arial Black", "Impact", sans-serif'
             }}
         >
-            {/* Background Image Container */}
+            {/* Main Image Wrapper */}
             <div style={{
-                position: 'absolute',
-                top: 0, left: 0,
-                width: '100%', height: '100%',
+                width: '100%',
+                height: 'auto',
+                position: 'relative',
                 zIndex: 0
             }}>
-                {/* Base Dark Image */}
-                <img
-                    src="/assets/FV.jpg"
-                    alt="Construction Site Dark"
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        filter: 'grayscale(30%) contrast(1.1) brightness(0.6)',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0
-                    }}
-                />
-
-                {/* Spotlight Bright Image */}
-                <img
-                    src="/assets/FV.jpg"
-                    alt="Construction Site Bright"
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        filter: 'grayscale(0%) contrast(1.2) brightness(1.1)', // Brighter and more colorful
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        maskImage: `radial-gradient(circle 300px at ${mousePos.x}px ${mousePos.y}px, black 10%, transparent 80%)`,
-                        WebkitMaskImage: `radial-gradient(circle 300px at ${mousePos.x}px ${mousePos.y}px, black 10%, transparent 80%)`,
-                        pointerEvents: 'none', // Pass events through to underlying elements if needed
-                        transition: 'mask-image 0.1s ease-out, -webkit-mask-image 0.1s ease-out' // Smooth movement
-                    }}
-                />
+                <picture style={{
+                    display: 'block',
+                    width: '100%',
+                    height: 'auto'
+                }}>
+                    <source media="(max-width: 768px)" srcSet="/assets/FVMBILE.jpg" />
+                    <img
+                        src="/assets/FV.jpg"
+                        alt="Construction Site"
+                        style={{
+                            display: 'block',
+                            width: '100%',
+                            height: 'auto', // Maintain aspect ratio
+                            objectFit: 'contain'
+                        }}
+                    />
+                </picture>
 
                 {/* Mesh Pattern Overlay */}
                 <div style={{

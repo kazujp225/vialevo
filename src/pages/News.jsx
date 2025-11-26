@@ -51,6 +51,7 @@ const News = () => {
                 title="お知らせ"
                 subtitle="NEWS"
                 breadcrumb={[{ label: 'お知らせ' }]}
+                bgImage="/assets/modern_architecture_bg_1764064438484.png"
             />
 
             <section className={styles.section}>

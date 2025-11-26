@@ -20,7 +20,10 @@ const People = () => {
                     <div className={styles.grid}>
                         {/* President & VP */}
                         <div className={styles.card}>
-                            <div className={styles.imagePlaceholder}>社長・副社長 写真</div>
+                            <div className={styles.imagePlaceholder}>
+                                {/* Ideally use real images here */}
+                                <span>LEADERS</span>
+                            </div>
                             <div className={styles.content}>
                                 <span className={styles.tag}>LEADERS</span>
                                 <h2 className={styles.cardTitle}>社長・副社長紹介</h2>
@@ -34,7 +37,9 @@ const People = () => {
 
                         {/* Founding Members */}
                         <div className={styles.card}>
-                            <div className={styles.imagePlaceholder}>創業メンバー 写真</div>
+                            <div className={styles.imagePlaceholder}>
+                                <span>FOUNDERS</span>
+                            </div>
                             <div className={styles.content}>
                                 <span className={styles.tag}>FOUNDERS</span>
                                 <h2 className={styles.cardTitle}>創業メンバー紹介</h2>
@@ -48,7 +53,9 @@ const People = () => {
 
                         {/* Sales Talk */}
                         <div className={styles.card}>
-                            <div className={styles.imagePlaceholder}>営業マン 写真</div>
+                            <div className={styles.imagePlaceholder}>
+                                <span>SALES</span>
+                            </div>
                             <div className={styles.content}>
                                 <span className={styles.tag}>SALES</span>
                                 <h2 className={styles.cardTitle}>営業マン対談</h2>
@@ -62,7 +69,9 @@ const People = () => {
 
                         {/* Construction Staff */}
                         <div className={styles.card}>
-                            <div className={styles.imagePlaceholder}>施工管理 写真</div>
+                            <div className={styles.imagePlaceholder}>
+                                <span>STAFF</span>
+                            </div>
                             <div className={styles.content}>
                                 <span className={styles.tag}>STAFF</span>
                                 <h2 className={styles.cardTitle}>施工管理で働く人たち</h2>
