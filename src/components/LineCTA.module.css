@@ -70,12 +70,20 @@
 }
 
 @media (max-width: 600px) {
+    .section {
+        padding: 24px 0;
+    }
+
     .content {
         flex-direction: column;
         text-align: center;
     }
 
     .textWrapper {
-        margin-bottom: var(--spacing-md);
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 1.2rem;
     }
 }

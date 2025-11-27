@@ -139,10 +139,18 @@
 }
 
 @media (max-width: 900px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
     .container {
         flex-direction: row;
         /* Keep row direction for carousel */
-        height: 500px;
+        height: 400px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding-bottom: 20px;

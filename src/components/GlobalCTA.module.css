@@ -76,8 +76,17 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 40px 0;
+    }
+
     .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+
+    .description {
+        margin-bottom: 24px;
     }
 
     .buttons {

@@ -224,9 +224,14 @@
 }
 
 @media (max-width: 900px) {
+    .section {
+        padding: 40px 0;
+    }
+
     .grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        gap: 12px;
     }
 
     .cardOnePage,
@@ -235,7 +240,7 @@
     .cardPeople {
         grid-column: auto;
         grid-row: auto;
-        min-height: 200px;
+        min-height: 160px;
     }
 
     .cardPeople .content {
