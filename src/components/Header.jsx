@@ -39,7 +39,7 @@ const Header = () => {
                     <ul className={styles.navList}>
                         <li><Link to="/company" className={styles.navLink}>会社を知る</Link></li>
                         <li><Link to="/job" className={styles.navLink}>仕事を知る</Link></li>
-                        <li><Link to="/people" className={styles.navLink}>人を知る</Link></li>
+
                         <li><Link to="/news" className={styles.navLink}>お知らせ</Link></li>
                     </ul>
                     <div className={styles.ctaButtons}>
@@ -62,7 +62,7 @@ const Header = () => {
                     <ul className={styles.mobileNavList}>
                         <li><Link to="/company" className={styles.mobileNavLink}>会社を知る</Link></li>
                         <li><Link to="/job" className={styles.mobileNavLink}>仕事を知る</Link></li>
-                        <li><Link to="/people" className={styles.mobileNavLink}>人を知る</Link></li>
+
                         <li><Link to="/news" className={styles.mobileNavLink}>お知らせ</Link></li>
                         <li><Link to="/recruit" className={styles.mobileNavLink}>募集要項</Link></li>
                         <li><Link to="/entry" className={`${styles.mobileBtn} ${styles.btnPrimary}`}>応募する</Link></li>
