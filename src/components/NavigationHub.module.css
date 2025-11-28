@@ -14,8 +14,8 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     /* Left side slightly larger */
-    grid-template-rows: 240px 240px;
-    /* Fixed compact height */
+    grid-template-rows: 240px auto;
+    /* Fixed top, auto bottom */
     gap: var(--spacing-sm);
     /* Tighter gap */
 }
@@ -210,17 +210,40 @@
     text-decoration: underline;
 }
 
-/* People Card Specifics */
-.cardPeople .content {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+/* Client Card Specifics */
+.cardClient {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    min-height: auto;
+    /* Allow it to grow */
 }
 
-.cardPeople .linkList {
+.cardClient .content {
+    justify-content: flex-start;
+    padding: var(--spacing-lg);
+}
+
+.clientContent {
     display: flex;
+    flex-direction: column;
     gap: var(--spacing-md);
-    flex-wrap: wrap;
+    margin-top: var(--spacing-sm);
+}
+
+.clientItem h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 4px;
+}
+
+.clientItem p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: justify;
 }
 
 @media (max-width: 900px) {
@@ -237,20 +260,13 @@
     .cardOnePage,
     .cardCompany,
     .cardJob,
-    .cardPeople {
+    .cardClient {
         grid-column: auto;
         grid-row: auto;
         min-height: 160px;
     }
 
-    .cardPeople .content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cardPeople .linkList {
-        flex-direction: column;
-        gap: 5px;
-        margin-top: 10px;
+    .cardClient {
+        min-height: auto;
     }
 }

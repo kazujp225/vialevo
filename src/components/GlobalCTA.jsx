@@ -7,7 +7,7 @@ const GlobalCTA = () => {
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <p className={styles.label}>全員面接、3,000名採用！</p>
+
                     <h2 className={styles.title}>
                         あなたの可能性を、<br />
                         Vialevoで試してみませんか？
