@@ -8,7 +8,12 @@ import People from './pages/People';
 import Recruit from './pages/Recruit';
 import Entry from './pages/Entry';
 import News from './pages/News';
-import PagePlaceholder from './pages/Placeholder';
+import Contact from './pages/Contact';
+import Sitemap from './pages/Sitemap';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import FAQ from './pages/FAQ';
+import NotFound from './pages/NotFound';
 import ScrollToTop from './components/ScrollToTop'; // We'll create this helper
 
 function App() {
@@ -26,7 +31,12 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/recruit" element={<Recruit />} />
             <Route path="/entry" element={<Entry />} />
-            <Route path="*" element={<PagePlaceholder title="404 Not Found" />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

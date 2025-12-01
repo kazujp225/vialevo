@@ -56,7 +56,7 @@ const Entry = () => {
 
                         <div className={styles.submitWrapper}>
                             <p className={styles.privacy}>
-                                <a href="#">プライバシーポリシー</a>に同意の上、送信してください。
+                                <a href="/privacy">プライバシーポリシー</a>に同意の上、送信してください。
                             </p>
                             <button type="submit" className={styles.submitBtn}>送信する</button>
                         </div>
