@@ -62,7 +62,7 @@ const Hero = () => {
                     .hero-image {
                         height: 100% !important;
                         width: 100% !important;
-                        object-fit: cover !important;
+                        object-fit: contain !important;
                         max-height: none !important;
                     }
                 }
@@ -91,7 +91,7 @@ const Hero = () => {
                             display: 'block',
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover'
+                            objectFit: 'contain'
                         }}
                     />
                 </picture>

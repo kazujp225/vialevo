@@ -1,0 +1,135 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-primary);
+    /* Dark background */
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a subtle background image or pattern if available */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/client_bg_female_worker.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.enTitle {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    /* Accent color for small title */
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.jpTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.2);
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+    display: inline-block;
+    color: var(--color-white);
+}
+
+.cardText {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .header {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .jpTitle {
+        font-size: 1.5rem;
+    }
+
+    .number {
+        font-size: 3rem;
+    }
+
+    .cardTitle {
+        font-size: 1.1rem;
+    }
+}

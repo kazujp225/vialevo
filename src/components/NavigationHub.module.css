@@ -12,12 +12,9 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    /* Left side slightly larger */
-    grid-template-rows: 240px auto;
-    /* Fixed top, auto bottom */
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: repeat(2, 240px);
     gap: var(--spacing-sm);
-    /* Tighter gap */
 }
 
 .card {
@@ -51,8 +48,8 @@
 }
 
 .cardJob {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
 
 .cardPeople {
@@ -295,14 +292,9 @@
 
     .cardOnePage,
     .cardCompany,
-    .cardJob,
-    .cardClient {
+    .cardJob {
         grid-column: auto;
         grid-row: auto;
         min-height: 160px;
-    }
-
-    .cardClient {
-        min-height: auto;
     }
 }
