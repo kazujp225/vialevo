@@ -160,4 +160,8 @@
     .title {
         font-size: 18vw;
     }
+
+    .scrollIndicator {
+        bottom: 20px;
+    }
 }
