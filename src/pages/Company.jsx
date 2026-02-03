@@ -37,7 +37,15 @@ const Company = () => {
                     <dl className={styles.companyTable}>
                         <div className={styles.row}>
                             <dt>会社名</dt>
-                            <dd>株式会社Vialevo</dd>
+                            <dd>株式会社Vialevo（ヴィアエヴォ）</dd>
+                        </div>
+                        <div className={styles.row}>
+                            <dt>設立日</dt>
+                            <dd>12月1日</dd>
+                        </div>
+                        <div className={styles.row}>
+                            <dt>所在地</dt>
+                            <dd>〒150-0043　東京都渋谷区道玄坂1-18-6秀峰ビル4階</dd>
                         </div>
                         <div className={styles.row}>
                             <dt>代表者</dt>
